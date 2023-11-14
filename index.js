@@ -97,3 +97,12 @@ for (var i=0; i < finances.length; i++) {
   netTotal += finances[i][1];
 }
 console.log('Net Total: $' + netTotal.toFixed(2));
+
+// Average of Changes in Profit/Losses
+var totalChange = 0;
+for (var i = 1; i < finances.length; i++) {
+  totalChange += finances[i][1] - finances[i - 1][1];
+}
+
+var averageChange = totalChange / (totalMonths - 1);
+console.log('Average Change: $' + averageChange.toFixed(2));
