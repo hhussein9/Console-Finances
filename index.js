@@ -106,3 +106,20 @@ for (var i = 1; i < finances.length; i++) {
 
 var averageChange = totalChange / (totalMonths - 1);
 console.log('Average Change: $' + averageChange.toFixed(2));
+
+// track total change in profits from month to month
+var totalChange = 0;
+for (var i=1; i < finances.length; i++) {
+  totalChange += finances [i][1] - finances[i - 1][1]
+}
+
+// Greatest increase in Profits (Date adn Amount)
+var greatestIncrease = {date: ", amount: -Infinity"};
+for (var i=1; i < finances.length; i++) {
+  var change = finances[i][1] - finances[i - 1][1];
+  if (change > greatestIncrease.amount) {
+    greatestIncrease.date = finances[i][0];
+    greatestIncrease.amount = change;
+  }
+}
+console.log('Greatest Increase in Profits:', greatestIncrease.date, '($' + greatestIncrease.amount.toFixed(2) + ')');
