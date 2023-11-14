@@ -87,5 +87,13 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
+// Calculate total number of months
 var totalMonths = finances.length;
 console.log('Total Months:', totalMonths);
+
+// Calculate Net Total Amont of Profit/Losses
+var netTotal = 0
+for (var i=0; i < finances.length; i++) {
+  netTotal += finances[i][1];
+}
+console.log('Net Total: $' + netTotal.toFixed(2));
