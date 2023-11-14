@@ -113,13 +113,4 @@ for (var i=1; i < finances.length; i++) {
   totalChange += finances [i][1] - finances[i - 1][1]
 }
 
-// Greatest increase in Profits (Date adn Amount)
-var greatestIncrease = {date: ", amount: -Infinity"};
-for (var i=1; i < finances.length; i++) {
-  var change = finances[i][1] - finances[i - 1][1];
-  if (change > greatestIncrease.amount) {
-    greatestIncrease.date = finances[i][0];
-    greatestIncrease.amount = change;
-  }
-}
-console.log('Greatest Increase in Profits:', greatestIncrease.date, '($' + greatestIncrease.amount.toFixed(2) + ')');
+// Greatest increase in Profits (Date and Amount)
